@@ -4,7 +4,7 @@
     "tabWidth": 2,
     "trailingComma": "es5",
     "arrowParens": "avoid",
-    "printWidth": 100,
+    "printWidth": 60,
     "endOfLine": "lf"
   }
   
