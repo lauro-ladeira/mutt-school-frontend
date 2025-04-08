@@ -16,10 +16,11 @@ export const Container = styled.div`
 
   justify-content: space-between;
   padding-top: 32px; /* Espaço para a imagem */
+  position: relative;
 `
 
-export const ButtonContainer = styled.div`
-  background-color: #e7aa4a;
+export const IntroContainer = styled.div`
+  background-color: var(--orange);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,8 +40,8 @@ export const StyledButton = styled.button`
   width: 177px;
   height: 48px;
   border-radius: 24px;
-  border: 1px solid #6c4a2e;
-  color: #6c4a2e;
+  border: 1px solid var(--brown);
+  color: var(--brown);
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
@@ -50,8 +51,8 @@ export const StyledButton = styled.button`
   transition: all 0.3s ease;
 
   &:hover {
-    background: #6c4a2e;
-    color: #fff;
+    background: var(--brown);
+    color: var(--text-light);
   }
 `
 
@@ -72,25 +73,7 @@ export const TextContainer = styled.div`
   width: 100%;
   padding: 16px;
   text-align: left; /* Alinhar o texto à esquerda */
-  color: #413227;
-`
-
-export const Title = styled.h1`
-  font-family: 'Akatab', sans-serif;
-  font-weight: 800;
-  font-size: 30px;
-  line-height: 100%;
-  letter-spacing: 0%;
-  margin-bottom: 8px; /* Espaço entre título e texto */
-`
-
-export const Description = styled.p`
-  font-family: 'Akatab';
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 100%;
-  letter-spacing: 0.3px;
-  line-height: 23px;
+  color: var(--text-dark);
 `
 
 export const LogoContainer = styled.div``
@@ -100,3 +83,32 @@ export const Message = styled.p``
 export const LoginButton = styled.button``
 
 export const PresentationContainer = styled.div``
+
+export const UserButtonContainer = styled.div`
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+`
+
+export const AuthMessage = styled.p`
+  font-family: 'Akatab', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--text-dark);
+`
+
+export const AdminButton = styled.button`
+  background: var(--brown);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 8px;
+
+  &:hover {
+    background: var(--brown-dark);
+  }
+`
