@@ -3,21 +3,26 @@ import {
   UserButton,
   useUser,
 } from '@clerk/clerk-react'
+import { useNavigate } from 'react-router-dom'
 import {
-  ButtonContainer,
-  Container,
-  Description,
+  IntroContainer,
   ImageContainer,
   StyledButton,
   StyledImage,
   TextContainer,
-  Title,
+  AuthMessage,
+  UserButtonContainer,
+  AdminButton,
+  Container,
 } from './styled'
-
 import logo from '../../assets/main-logo.svg'
+import { Description, Title } from '../styles'
 
 export const Welcome = () => {
-  const { isSignedIn } = useUser()
+  const navigate = useNavigate()
+  const { isSignedIn, user } = useUser()
+
+  const isAdmin = user?.publicMetadata?.role === 'admin'
 
   return (
     <Container>
@@ -25,7 +30,18 @@ export const Welcome = () => {
         <StyledImage src={logo} alt="Logo" />
       </ImageContainer>
 
-      <ButtonContainer>
+      {isSignedIn && (
+        <UserButtonContainer>
+          {isAdmin && (
+            <AdminButton onClick={() => navigate('/admin')}>
+              Painel admin
+            </AdminButton>
+          )}
+          <UserButton />
+        </UserButtonContainer>
+      )}
+
+      <IntroContainer>
         <TextContainer>
           <Title>Bem-vindo</Title>
           <Description>
@@ -41,9 +57,9 @@ export const Welcome = () => {
             <StyledButton>Entrar</StyledButton>
           </SignInButton>
         ) : (
-          <UserButton />
+          <AuthMessage>Usuário autenticado</AuthMessage>
         )}
-      </ButtonContainer>
+      </IntroContainer>
     </Container>
   )
 }
