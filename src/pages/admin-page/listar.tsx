@@ -1,0 +1,1 @@
+export const ListagemAnimais = () => <h1>📄 Lista de animais</h1>
