@@ -15,7 +15,7 @@ import {
   AdminButton,
   Container,
 } from './styled'
-import logo from '../../assets/main-logo.svg'
+import logo from '../../assets/logo.svg'
 import { Description, Title } from '../styles'
 
 export const Welcome = () => {
